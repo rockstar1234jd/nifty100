@@ -1,0 +1,13 @@
+table,source_file,rows_in,rows_out,duplicates_removed,rejected,status,message,runtime_s,timestamp
+companies,companies.xlsx,92,92,0,0,loaded,,3.567,2026-07-06T20:17:09.326298
+profitandloss,profitandloss.xlsx,1276,1070,16,190,loaded,,2.478,2026-07-06T20:17:11.804711
+balancesheet,balancesheet.xlsx,1312,1140,87,85,loaded,,1.033,2026-07-06T20:17:12.838224
+cashflow,cashflow.xlsx,1187,1056,35,96,loaded,,0.689,2026-07-06T20:17:13.526952
+analysis,analysis.xlsx,20,16,0,4,loaded,,0.13,2026-07-06T20:17:13.657226
+documents,documents.xlsx,1585,1457,0,128,loaded,,1.414,2026-07-06T20:17:15.071525
+prosandcons,prosandcons.xlsx,16,14,0,2,loaded,,0.864,2026-07-06T20:17:15.935753
+sectors,sectors.xlsx,92,92,0,0,loaded,,0.172,2026-07-06T20:17:16.109190
+stock_prices,stock_prices.xlsx,5520,5520,0,0,loaded,,3.816,2026-07-06T20:17:19.925382
+market_cap,market_cap.xlsx,552,552,0,0,loaded,,0.317,2026-07-06T20:17:20.242768
+financial_ratios,financial_ratios.xlsx,1184,1041,119,24,loaded,,3.738,2026-07-06T20:17:23.980838
+peer_groups,peer_groups.xlsx,56,56,0,0,loaded,,0.111,2026-07-06T20:17:24.092462

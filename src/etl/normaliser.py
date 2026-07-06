@@ -40,6 +40,8 @@ MONTH_MAP: dict[str, str] = {
 	"December": "12",
 }
 
+YEAR_TABLES = {"profitandloss", "balancesheet", "cashflow", "financial_ratios"}
+
 
 def _is_missing(value: Any) -> bool:
 	return value is None or (isinstance(value, float) and pd.isna(value))
@@ -90,11 +92,19 @@ def normalize_ticker(raw: Any) -> str:
 	"""Normalize a company identifier to the cleaned ticker form."""
 
 	if _is_missing(raw):
-		return ""
+		return "MISSING"
 
 	ticker = str(raw).strip().upper()
-	ticker = re.sub(r"\s+", " ", ticker)
-	ticker = ticker.replace(".NS", "").replace(".BSE", "")
+	if not ticker:
+		return "MISSING"
+
+	ticker = re.sub(r"\.(NS|BSE|NSE)$", "", ticker)
+	ticker = re.sub(r"\s+", "", ticker)
+
+	if len(ticker) < 2 or len(ticker) > 12:
+		logger.warning("normalize_ticker: length out of range for '%s'", ticker)
+		return "INVALID"
+
 	return ticker
 
 
@@ -102,4 +112,49 @@ def normalize_company_id(raw: Any) -> str:
 	"""Backward-compatible alias for the company identifier normaliser."""
 
 	return normalize_ticker(raw)
+
+
+def _coerce_nullable_int(series: pd.Series) -> pd.Series:
+	return pd.to_numeric(series, errors="coerce").astype("Int64")
+
+
+def _coerce_benchmark_flag(series: pd.Series) -> pd.Series:
+	def convert(value: Any) -> int | None:
+		if value is None or pd.isna(value):
+			return None
+		if isinstance(value, str):
+			value = value.strip().lower()
+			if value in {"1", "true", "yes", "y"}:
+				return 1
+			if value in {"0", "false", "no", "n"}:
+				return 0
+		return 1 if bool(value) else 0
+
+	return series.map(convert).astype("Int64")
+
+
+def apply_normalisation(df: pd.DataFrame, table_name: str) -> pd.DataFrame:
+	"""Apply the table-specific normalisation rules used by Sprint 1."""
+
+	frame = df.copy()
+
+	if "company_id" in frame.columns:
+		frame["company_id"] = frame["company_id"].apply(normalize_ticker)
+
+	if table_name == "companies" and "id" in frame.columns:
+		frame["id"] = frame["id"].apply(normalize_ticker)
+
+	if table_name in YEAR_TABLES and "year" in frame.columns:
+		frame["year"] = frame["year"].apply(normalize_year)
+
+	if table_name == "documents" and "Year" in frame.columns:
+		frame["Year"] = _coerce_nullable_int(frame["Year"])
+
+	if table_name == "market_cap" and "year" in frame.columns:
+		frame["year"] = _coerce_nullable_int(frame["year"])
+
+	if table_name == "peer_groups" and "is_benchmark" in frame.columns:
+		frame["is_benchmark"] = _coerce_benchmark_flag(frame["is_benchmark"])
+
+	return frame
 
