@@ -1,0 +1,44 @@
+======================================================================
+RATIO ENGINE - SOURCE CROSS-CHECK LOG
+Run against 91 companies - latest year per company
+======================================================================
+
+[ABB] ROCE engine=36.54% source=46.00% diff=9.46pp
+[ADANIGREEN] ROCE engine=7.25% source=96.50% diff=89.25pp
+[ADANIPOWER] ROCE engine=18.39% source=32.20% diff=13.81pp
+[ASIANPAINT] ROCE engine=31.75% source=41.75% diff=10.00pp
+[BAJAJ-AUTO] ROCE engine=27.21% source=33.50% diff=6.29pp
+[BAJAJFINSV] ROCE engine=11.45% source=21.14% diff=9.69pp
+[BAJAJHLDNG] ROCE engine=2.81% source=13.10% diff=10.29pp
+[BAJFINANCE] ROCE engine=4.17% source=11.90% diff=7.73pp
+[BEL] ROCE engine=3628.35% source=34.60% diff=3593.75pp
+[BOSCHLTD] ROCE engine=13.76% source=20.60% diff=6.84pp
+[CHOLAFIN] ROCE engine=3.37% source=10.40% diff=7.03pp
+[CIPLA] ROCE engine=67.60% source=22.80% diff=44.80pp
+[COALINDIA] ROCE engine=98.17% source=63.60% diff=34.57pp
+[DRREDDY] ROCE engine=21.36% source=26.50% diff=5.14pp
+[EICHERMOT] ROCE engine=20.21% source=31.10% diff=10.89pp
+[GODREJCP] ROCE engine=17.17% source=26.49% diff=9.32pp
+[HAL] ROCE engine=2590.99% source=38.90% diff=2552.09pp
+[HDFCLIFE] ROCE engine=645.95% source=6.61% diff=639.34pp
+[HEROMOTOCO] ROCE engine=173.71% source=29.10% diff=144.61pp
+[HINDALCO] ROCE engine=113.58% source=11.30% diff=102.28pp
+[HINDUNILVR] ROCE engine=87.32% source=27.20% diff=60.12pp
+[ICICIGI] ROCE engine=145.23% source=22.50% diff=122.73pp
+[ICICIPRULI] ROCE engine=753.98% source=8.75% diff=745.23pp
+[INDIGO] ROCE engine=4953.54% source=24.50% diff=4929.04pp
+[INFY] ROCE engine=32.91% source=40.00% diff=7.09pp
+[IRCTC] ROCE engine=42.83% source=53.80% diff=10.97pp
+[LICI] ROCE engine=39.05% source=63.79% diff=24.74pp
+[LT] ROCE engine=118.53% source=17.18% diff=101.35pp
+[LTIM] ROCE engine=25.21% source=34.10% diff=8.89pp
+[M&M] ROCE engine=11.54% source=26.98% diff=15.44pp
+[MARUTI] ROCE engine=15.59% source=23.67% diff=8.08pp
+[NESTLEIND] ROCE engine=143.15% source=185.43% diff=42.28pp
+[PFC] ROCE engine=3.48% source=9.96% diff=6.48pp
+[SBILIFE] ROCE engine=1.14% source=13.20% diff=12.06pp
+[SHRIRAMFIN] ROCE engine=4.06% source=11.30% diff=7.24pp
+[SIEMENS] ROCE engine=17.74% source=25.60% diff=7.86pp
+
+Total anomalies: 36
+======================================================================
