@@ -1,0 +1,108 @@
+screener:
+  filters:
+    min_roe:
+      column: return_on_equity_pct
+      operator: ">="
+      source: financial_ratios
+    max_de:
+      column: debt_to_equity
+      operator: "<="
+      source: financial_ratios
+      sector_bypass: [Financials]
+    min_fcf:
+      column: free_cash_flow_cr
+      operator: ">="
+      source: financial_ratios
+    min_rev_cagr_5yr:
+      column: revenue_cagr_5yr
+      operator: ">="
+      source: financial_ratios
+    min_pat_cagr_5yr:
+      column: pat_cagr_5yr
+      operator: ">="
+      source: financial_ratios
+    min_opm:
+      column: operating_profit_margin_pct
+      operator: ">="
+      source: financial_ratios
+    max_pe:
+      column: pe_ratio
+      operator: "<="
+      source: market_cap
+    max_pb:
+      column: pb_ratio
+      operator: "<="
+      source: market_cap
+    min_div_yield:
+      column: dividend_yield_pct
+      operator: ">="
+      source: market_cap
+    min_icr:
+      column: interest_coverage
+      operator: ">="
+      source: financial_ratios
+      icr_passthrough: true
+    min_market_cap:
+      column: market_cap_crore
+      operator: ">="
+      source: market_cap
+    min_net_profit:
+      column: net_profit
+      operator: ">="
+      source: financial_ratios
+    min_eps_cagr_5yr:
+      column: eps_cagr_5yr
+      operator: ">="
+      source: financial_ratios
+    min_asset_turnover:
+      column: asset_turnover
+      operator: ">="
+      source: financial_ratios
+    min_sales:
+      column: sales
+      operator: ">="
+      source: profitandloss
+  presets:
+    quality_compounder:
+      thresholds:
+        min_roe: 15
+        min_fcf: 0
+        min_rev_cagr_5yr: 8
+        min_pat_cagr_5yr: 8
+        min_opm: 12
+        min_market_cap: 200000
+    value_pick:
+      thresholds:
+        min_roe: 5
+        max_de: 2.0
+        max_pe: 30
+        max_pb: 5
+        min_div_yield: 1.0
+        min_market_cap: 200000
+    growth_accelerator:
+      thresholds:
+        min_roe: 12
+        min_rev_cagr_5yr: 12
+        min_pat_cagr_5yr: 12
+        min_eps_cagr_5yr: 12
+        min_sales: 20000
+    dividend_champion:
+      thresholds:
+        min_div_yield: 2.0
+        min_roe: 10
+        max_pe: 30
+        min_market_cap: 200000
+        min_fcf: 0
+    debt_free_blue_chip:
+      thresholds:
+        min_roe: 10
+        max_de: 0.0
+        min_icr: 5
+        min_market_cap: 200000
+        min_sales: 20000
+    turnaround_watch:
+      thresholds:
+        min_market_cap: 500000
+        min_sales: 50000
+        max_de: 2
+        min_opm: 12

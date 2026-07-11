@@ -1,5 +1,9 @@
 {
     "chat.tools.terminal.autoApprove": {
-        "pytest": true
+        "pytest": true,
+        "/^python -m pytest tests/screener/test_engine\\.py tests/kpi/test_peer\\.py -v --tb=short \\| Out-String$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
     }
 }
