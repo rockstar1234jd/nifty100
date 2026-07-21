@@ -1,0 +1,109 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+*.cover
+.cache
+
+# Data Files (IMPORTANT: Exclude large data files)
+data/nifty100.db
+data/raw/*.xlsx
+data/supporting/*.xlsx
+*.db
+*.sqlite
+*.sqlite3
+
+# Output Files
+output/*.xlsx
+output/*.csv
+output/*.log
+output/*.html
+!output/.gitkeep
+
+# Reports
+reports/tearsheets/*.pdf
+reports/sector/*.pdf
+reports/portfolio/*.pdf
+reports/radar_charts/*.png
+!reports/**/.gitkeep
+
+# Environment Variables
+.env
+*.env
+!config/.env.template
+
+# Logs
+*.log
+logs/
+*.out
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Documentation builds
+docs/_build/
+site/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Kiro specs (if you don't want to track them)
+.kiro/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Ruff
+.ruff_cache/
